@@ -6,7 +6,10 @@ import pandas as pd
 from time import sleep
 from datetime import datetime
 
-driver = webdriver.Chrome('./chromedriver.exe')
+ser = Service('./chromedriver')
+options = webdriver.ChromeOptions()
+options.add_argument("--lang=en-US")
+driver = webdriver.Chrome(service=ser, options=options)
 
 url = "https://twitter.com/search?q={}%20since:{}%20until:{}%20{}&src=typed_query&f=live"
 account_url = "https://twitter.com/search?q=(from%3A{})%20since:{}%20until:{}%20{}&src=typed_query&f=live"
@@ -96,29 +99,11 @@ def search(word, count=10, fdate='2022-02-01', tdate="2022-02-12", account_name=
             break
 
 
-words_to_search = [
-    (
-        "#NFT",
-        "2022-01-01",
-    ),
-]
-
-
 def search_words(words_to_search):
     for w, d in words_to_search:
         print("Collecting:", w, '...')
         search(w, 10000, d)
         print("#" * 50)
-
-# search_words(words_to_search)
-
-
-accounts = [
-    (
-        'twitter',
-        "2022-01-01",
-    ),
-]
 
 
 def search_accounts(accounts):
@@ -128,4 +113,20 @@ def search_accounts(accounts):
         print("#" * 50)
 
 
+words_to_search = [
+    (
+        "#NFT",
+        "2022-01-01",
+    ),
+]
+
+
+accounts = [
+    (
+        'twitter',
+        "2022-01-01",
+    ),
+]
+
+# search_words(words_to_search)
 # search_accounts(accounts)

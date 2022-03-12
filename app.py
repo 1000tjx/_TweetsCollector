@@ -129,4 +129,4 @@ accounts = [
 ]
 
 # search_words(words_to_search)
-# search_accounts(accounts)
+search_accounts(accounts)

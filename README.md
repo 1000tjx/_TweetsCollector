@@ -1,4 +1,4 @@
-# tweets_collector
+# Tweets_collector
 
 # Deps
 - Python3

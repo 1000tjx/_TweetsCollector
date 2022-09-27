@@ -4,7 +4,7 @@
 - Python3
 - pandas
 - selenium
-- reequests
+- requests
 - Chrome browser & chrome driver
 
 

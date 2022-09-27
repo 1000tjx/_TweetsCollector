@@ -1,7 +1,3 @@
-from pydoc import describe
-from re import A
-from textwrap import indent
-from tkinter.messagebox import NO
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
